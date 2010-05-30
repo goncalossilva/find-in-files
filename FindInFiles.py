@@ -146,12 +146,13 @@ class ResultsView(gtk.VBox):
                     each.goto_line(line_number)
 
                     # Get the bounds of the document
-                    (start, end) = each.get_bounds()
+                    #(start, end) = each.get_bounds()
 
-                    self.geditwindow.get_active_view().scroll_to_iter(end, 0.0)
+                    #self.geditwindow.get_active_view().scroll_to_iter(end, 0.0)
 
                     x = each.get_iter_at_line_offset(line_number, 0)
-                    self.geditwindow.get_active_view().scroll_to_iter(x, 0.0)
+                    #self.geditwindow.get_active_view().scroll_to_iter(x, 0.0)
+                    self.geditwindow.get_active_view().scroll_to_iter(x, 0.0, True)
 
                     return
 
