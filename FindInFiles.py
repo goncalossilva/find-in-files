@@ -165,11 +165,11 @@ class ResultsView(gtk.VBox):
     # displays the results in the side panel.
     def button_press(self, widget):
         # Get all open tabs
-        documents = self.geditwindow.get_documents()
+        #documents = self.geditwindow.get_documents()
 
         # Make sure there are documents to search...
-        if (len(documents) == 0):
-            return # Can't search nothing.  :P
+        #if (len(documents) == 0):
+        #    return # Can't search nothing.  :P
 
         # Let's also make sure the user entered a search string
         if (len(self.search_form.get_text()) <= 0):
