@@ -158,7 +158,9 @@ class ResultsView(gtk.VBox):
 
             # If we got this far, then we didn't find the file open in a tab.
             # Thus, we'll want to go ahead and open it...
-            self.geditwindow.create_tab_from_uri("file://" + absolute_path, self.encoding, int(model.get_value(iterator, 2)), False, True)
+            opened_file = self.geditwindow.create_tab_from_uri("file://" + absolute_path, self.encoding, int(model.get_value(iterator, 2)), False, True)
+            x = each.get_iter_at_line_offset(line_number, 0)
+            self.geditwindow.get_active_view().scroll_to_iter(x, 0.0, True)
 
     # Clicking the "Find" button or hitting return in the search area calls button_press.
     # This function, of course, searches each open document for the search query and
